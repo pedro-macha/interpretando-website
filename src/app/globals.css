@@ -1,26 +1,321 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    background: #fafafa;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  h1 { @apply text-4xl lg:text-5xl; }
+  h2 { @apply text-3xl lg:text-4xl; }
+  h3 { @apply text-2xl lg:text-3xl; }
+  h4 { @apply text-xl lg:text-2xl; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ==========================================================================
+   LAYOUT COMPONENTS
+   ========================================================================== */
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* ==========================================================================
+     BUTTON SYSTEM
+     ========================================================================== */
+
+  .btn-base {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md focus:ring-gray-500;
+  }
+
+  .btn-outline {
+    @apply btn-base bg-transparent hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-gray-400 focus:ring-gray-500;
+  }
+
+  .btn-gradient {
+    @apply btn-base bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-800 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-blue-500;
+  }
+
+  /* ==========================================================================
+     CARD SYSTEM
+     ========================================================================== */
+
+  .card {
+    @apply bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  .card-lg {
+    @apply card p-8 md:p-10;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300;
+  }
+
+  .glass-effect {
+    @apply bg-white/95 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+
+  /* ==========================================================================
+     FEATURE ELEMENTS
+     ========================================================================== */
+
+  .feature-icon {
+    @apply w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg;
+  }
+
+  .stat-number {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+  }
+
+  /* ==========================================================================
+     BACKGROUNDS & GRADIENTS
+     ========================================================================== */
+
+  /* Modern Navy/Blue Gradient System */
+  .bg-gradient-modern-1 {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  }
+
+  .bg-gradient-modern-2 {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  }
+
+  .bg-gradient-modern-3 {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  }
+
+  .bg-gradient-modern-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #1e40af 70%, #2563eb 100%);
+  }
+
+  .text-gradient-modern {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Modern Button Styles */
+  .btn-primary-modern {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    @apply text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-blue-500;
+  }
+
+  .btn-primary-modern:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  }
+
+  .btn-ghost-modern {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-white/90 backdrop-blur-sm text-slate-800 border border-white/50 hover:bg-white hover:border-white/70 focus:ring-blue-500 shadow-sm;
+  }
+
+  /* Modern Container */
+  .container-modern {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Modern Card System */
+  .card-modern {
+    @apply bg-white/95 backdrop-blur-sm rounded-2xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 p-6;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+
+  /* Improved Glass Effects for Better Contrast */
+  .glass-effect {
+    @apply bg-white/95 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+
+  .glass-effect-dark {
+    @apply bg-slate-900/90 backdrop-blur-md border border-white/20 shadow-lg text-white;
+  }
+
+  /* Navigation text improvements */
+  .nav-text-light {
+    @apply text-slate-800 hover:text-slate-900;
+  }
+
+  .nav-text-dark {
+    @apply text-white/90 hover:text-white;
+  }
+
+  /* Text contrast utilities */
+  .text-high-contrast {
+    @apply text-slate-900 font-medium;
+  }
+
+  .text-medium-contrast {
+    @apply text-slate-700;
+  }
+
+  .text-low-contrast {
+    @apply text-slate-500;
+  }
+
+  /* Background with better text readability */
+  .bg-high-contrast {
+    @apply bg-white text-slate-900;
+  }
+
+  .bg-medium-contrast {
+    @apply bg-slate-50 text-slate-800;
+  }
+
+  /* Updated neutral gradients - changing from colorful to navy/blue */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-br from-slate-50 to-blue-50;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-br from-blue-50 to-slate-100;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ==========================================================================
+     ANIMATIONS
+     ========================================================================== */
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ==========================================================================
+     SCROLLBAR STYLING
+     ========================================================================== */
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* ==========================================================================
+     SELECTION & FOCUS
+     ========================================================================== */
+
+  ::selection {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Improved button hover states */
+  .btn-primary:hover {
+    @apply bg-blue-700 shadow-xl;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-gray-100 border-gray-400 text-gray-900;
+  }
 }
