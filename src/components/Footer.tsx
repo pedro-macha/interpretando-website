@@ -69,16 +69,16 @@ export default function Footer() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {badges.map((badge, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8 text-center group hover:scale-105 transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg mx-auto mb-6 group-hover:shadow-xl transition-shadow">
-                  <badge.icon className="w-8 h-8" />
+              <div key={index} className="bg-white rounded-xl md:rounded-2xl border border-gray-200 shadow-lg p-6 md:p-8 text-center group hover:scale-105 transition-all duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg mx-auto mb-4 md:mb-6 group-hover:shadow-xl transition-shadow">
+                  <badge.icon className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">
+                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3">
                   {badge.text}
                 </h4>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                   {badge.desc}
                 </p>
               </div>
@@ -103,48 +103,48 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {offices.map((office, index) => (
-              <div key={index} className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8 group hover:scale-105 transition-all duration-300">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                    <MapPin className="w-6 h-6" />
+              <div key={index} className="bg-white rounded-xl md:rounded-2xl border border-gray-200 shadow-lg p-6 md:p-8 group hover:scale-105 transition-all duration-300">
+                <div className="flex items-center space-x-3 md:space-x-4 mb-4 md:mb-6">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg">
+                    <MapPin className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900">
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900">
                       {office.city}
                     </h4>
-                    <span className="text-blue-600 font-medium">
+                    <span className="text-blue-600 font-medium text-sm md:text-base">
                       {office.uf}
                     </span>
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
-                    <p className="text-slate-700 leading-relaxed">
+                    <MapPin className="w-4 h-4 md:w-5 md:h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <p className="text-slate-700 leading-relaxed text-sm md:text-base">
                       {office.address}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className="grid grid-cols-1 gap-2 md:gap-3">
                     <a 
                       href={`tel:${office.phone.replace(/\D/g, '')}`}
-                      className="flex items-center space-x-3 p-3 rounded-xl bg-blue-50 hover:bg-blue-100 transition-all duration-200 group/link"
+                      className="flex items-center space-x-2 md:space-x-3 p-2 md:p-3 rounded-lg md:rounded-xl bg-blue-50 hover:bg-blue-100 transition-all duration-200 group/link"
                     >
-                      <Phone className="w-4 h-4 text-green-600" />
-                      <span className="text-slate-700 group-hover/link:text-slate-900">
+                      <Phone className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
+                      <span className="text-slate-700 group-hover/link:text-slate-900 text-sm md:text-base">
                         {office.phone}
                       </span>
                     </a>
 
                     <a 
                       href={`mailto:${office.email}`}
-                      className="flex items-center space-x-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 group/link"
+                      className="flex items-center space-x-2 md:space-x-3 p-2 md:p-3 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 group/link"
                     >
-                      <Mail className="w-4 h-4 text-blue-500" />
-                      <span className="text-slate-600 group-hover/link:text-slate-800 text-sm">
+                      <Mail className="w-3 h-3 md:w-4 md:h-4 text-blue-500" />
+                      <span className="text-slate-600 group-hover/link:text-slate-800 text-xs md:text-sm">
                         {office.email}
                       </span>
                     </a>

@@ -132,24 +132,24 @@ export default function QuoteSection() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Column - Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 shadow-xl border border-slate-100">
               {/* Header */}
-              <div className="mb-10">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
-                  <Calculator className="w-4 h-4 mr-2" />
+              <div className="mb-8 md:mb-10">
+                <div className="inline-flex items-center px-3 md:px-4 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs md:text-sm font-medium mb-4 md:mb-6">
+                  <Calculator className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                   Orçamento Gratuito
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight mb-4 md:mb-6">
                   Solicite Seu
                   <span className="block text-gradient-primary">
                     Orçamento
                   </span>
                   Agora Mesmo
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-base md:text-lg text-slate-600">
                   Preencha o formulário e receba uma proposta personalizada em até 30 minutos.
                 </p>
               </div>

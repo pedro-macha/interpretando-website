@@ -25,29 +25,30 @@ export default function Header() {
   return (
     <header className="glass-effect sticky top-0 z-50 border-b border-gray-200/50">
       {/* Contact Bar */}
-      <div className="bg-gray-900 text-white py-3">
+      <div className="bg-gray-900 text-white py-3 hidden sm:block">
         <div className="container-custom">
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm">
             <a 
               href="tel:+556130341042" 
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200"
             >
-              <Phone size={16} />
+              <Phone size={14} className="sm:w-4 sm:h-4" />
               <span className="font-medium">(61) 3034-1042</span>
             </a>
             <a 
               href="https://wa.me/5561981331104" 
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-green-500/20 hover:bg-green-500/30 transition-all duration-200"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg bg-green-500/20 hover:bg-green-500/30 transition-all duration-200"
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={14} className="sm:w-4 sm:h-4" />
               <span className="font-medium">(61) 98133-1104</span>
             </a>
             <a 
               href="mailto:contato@interpretando.com.br" 
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 transition-all duration-200"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 transition-all duration-200"
             >
-              <Mail size={16} />
-              <span className="font-medium">contato@interpretando.com.br</span>
+              <Mail size={14} className="sm:w-4 sm:h-4" />
+              <span className="font-medium hidden sm:inline">contato@interpretando.com.br</span>
+              <span className="font-medium sm:hidden">E-mail</span>
             </a>
           </div>
         </div>

@@ -283,24 +283,24 @@ export default function ServicesSection() {
         </div>
 
         {/* Metrics */}
-        <div className="mb-20">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100">
-            <h3 className="text-3xl font-bold text-center text-slate-900 mb-12">
+        <div className="mb-16 md:mb-20">
+          <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 shadow-xl border border-slate-100">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-slate-900 mb-8 md:mb-12">
               Números que Comprovam Nossa Excelência
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {metrics.map((metric, index) => (
                 <div key={index} className="text-center">
-                  <div className="bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="bg-blue-600 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
                     {(() => {
                       const IconComponent = metric.icon;
-                      return <IconComponent className="w-8 h-8 text-white" />;
+                      return <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-white" />;
                     })()}
                   </div>
-                  <div className="text-3xl font-bold mb-2 block">
+                  <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 block">
                     {metric.number}
                   </div>
-                  <div className="text-slate-600">
+                  <div className="text-slate-600 text-sm md:text-base">
                     {metric.label}
                   </div>
                 </div>
@@ -311,28 +311,28 @@ export default function ServicesSection() {
 
         {/* Why Choose Us */}
         <div>
-          <h3 className="text-4xl font-bold text-center text-white mb-16">
+          <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-16">
             Por que escolher a
             <span className="block text-gradient-primary">
               Interpretando?
             </span>
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {whyChooseUs.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 text-center group"
+                className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 text-center group"
               >
-                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
+                <div className="bg-blue-100 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:bg-blue-200 transition-colors">
                   {(() => {
                     const IconComponent = item.icon;
-                    return <IconComponent className="w-8 h-8 text-blue-600" />;
+                    return <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />;
                   })()}
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-4">
+                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-3 md:mb-4">
                   {item.title}
                 </h4>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                   {item.description}
                 </p>
               </div>

@@ -196,23 +196,23 @@ export default function FAQSection() {
           {/* Sidebar */}
           <div className="lg:col-span-4">
             {/* Stats */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 mb-8">
-              <h3 className="text-xl font-bold text-slate-900 mb-8 text-center">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 mb-6 md:mb-8">
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-6 md:mb-8 text-center">
                 Por que confiar na Interpretando?
               </h3>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="bg-blue-600 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-blue-600 w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
                       {(() => {
                         const IconComponent = stat.icon;
-                        return <IconComponent className="w-7 h-7 text-white" />;
+                        return <IconComponent className="w-6 h-6 md:w-7 md:h-7 text-white" />;
                       })()}
                     </div>
-                    <div className="text-xl font-bold text-slate-900 mb-1">
+                    <div className="text-lg md:text-xl font-bold text-slate-900 mb-1">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-xs md:text-sm text-slate-600">
                       {stat.label}
                     </div>
                   </div>

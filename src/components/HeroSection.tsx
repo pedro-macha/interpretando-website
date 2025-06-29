@@ -88,13 +88,13 @@ export default function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-white/20">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl font-bold text-white mb-1 group-hover:scale-110 transition-transform duration-200">
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:scale-110 transition-transform duration-200">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/70 font-medium mt-1">
+                  <div className="text-xs md:text-sm text-white/70 font-medium mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -105,55 +105,55 @@ export default function HeroSection() {
           {/* Right Content - Visual Elements */}
           <div className="relative">
             {/* Main Card */}
-            <div className="card-hover p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                <CheckCircle className="w-5 h-5 text-white" />
+            <div className="card-hover p-4 md:p-8 transform rotate-1 md:rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                <CheckCircle className="w-3 h-3 md:w-5 md:h-5 text-white" />
               </div>
               
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-center space-x-3 md:space-x-4">
                   <div className="feature-icon">
-                    <Award className="w-6 h-6" />
+                    <Award className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">Certificado Oficial</h3>
-                    <p className="text-slate-600">JUCESP • JUCERJA • JUCEMG</p>
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900">Certificado Oficial</h3>
+                    <p className="text-sm md:text-base text-slate-600">JUCESP • JUCERJA • JUCEMG</p>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                    <span className="font-medium text-slate-700">Tempo de Entrega</span>
-                    <span className="text-green-600 font-bold">24-48h</span>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="flex justify-between items-center p-3 md:p-4 bg-gray-50 rounded-xl">
+                    <span className="font-medium text-slate-700 text-sm md:text-base">Tempo de Entrega</span>
+                    <span className="text-green-600 font-bold text-sm md:text-base">24-48h</span>
                   </div>
                   
-                  <div className="flex justify-between items-center p-4 bg-blue-50 rounded-xl">
-                    <span className="font-medium text-slate-700">Validade</span>
-                    <span className="text-blue-600 font-bold">Nacional</span>
+                  <div className="flex justify-between items-center p-3 md:p-4 bg-blue-50 rounded-xl">
+                    <span className="font-medium text-slate-700 text-sm md:text-base">Validade</span>
+                    <span className="text-blue-600 font-bold text-sm md:text-base">Nacional</span>
                   </div>
                   
-                  <div className="flex justify-between items-center p-4 bg-purple-50 rounded-xl">
-                    <span className="font-medium text-slate-700">Idiomas</span>
-                    <span className="text-purple-600 font-bold">EN • ES</span>
+                  <div className="flex justify-between items-center p-3 md:p-4 bg-purple-50 rounded-xl">
+                    <span className="font-medium text-slate-700 text-sm md:text-base">Idiomas</span>
+                    <span className="text-purple-600 font-bold text-sm md:text-base">EN • ES</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center space-x-2 pt-4">
+                <div className="flex items-center justify-center space-x-1 md:space-x-2 pt-2 md:pt-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" />
                   ))}
-                  <span className="text-slate-600 font-medium ml-2">4.9/5 (2.4k avaliações)</span>
+                  <span className="text-slate-600 font-medium ml-2 text-xs md:text-base">4.9/5 (2.4k avaliações)</span>
                 </div>
               </div>
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-8 -left-8 w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce">
-              <Globe className="w-8 h-8 text-white" />
+            <div className="absolute -top-4 -left-4 md:-top-8 md:-left-8 w-12 h-12 md:w-16 md:h-16 bg-yellow-500 rounded-xl md:rounded-2xl flex items-center justify-center shadow-xl animate-bounce">
+              <Globe className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </div>
             
-            <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-green-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
-              <CheckCircle className="w-10 h-10 text-white" />
+            <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-16 h-16 md:w-20 md:h-20 bg-green-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+              <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
           </div>
         </div>
